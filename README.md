@@ -9,3 +9,10 @@ $ bin/zookeeper-server-start.sh config/zookeeper.properties
 2. 
 # Start the Kafka broker service
 $ bin/kafka-server-start.sh config/server.properties
+
+
+3. setup spring-boot version which is compatible with spring-kafka version.
+
+https://spring.io/projects/spring-kafka
+
+in this case 2.3.6.RELEASE is compatible with spring-kafka 2.7.1
