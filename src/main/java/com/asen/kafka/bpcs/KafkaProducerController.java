@@ -4,7 +4,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import org.slf4j.MDC;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.asen.kafka.in.PublishKafkaMessageRequest;
 import com.asen.kafka.in.PublishKafkaMessageResponse;
+import com.asen.kafka.service.KafkaProducerService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,6 +25,8 @@ import io.swagger.annotations.ApiResponses;
 @Path("/")
 public class KafkaProducerController {
 
+	@Autowired
+	KafkaProducerService kafkaProducerService;
 	
 	@POST
 	@Path("publishKafkaMessage")
@@ -34,9 +37,8 @@ public class KafkaProducerController {
 		@ApiResponse(code=500, message="500", response=PublishKafkaMessageResponse.class)
 	})
 	@RequestMapping(value = "publishKafkaMessage", method=RequestMethod.POST)
-	public PublishKafkaMessageResponse publishKafkaMessage(@RequestBody PublishKafkaMessageRequest request) {
-		
-		return new PublishKafkaMessageResponse();
+	public PublishKafkaMessageResponse publishKafkaMessage(@RequestBody PublishKafkaMessageRequest request) {		
+		return kafkaProducerService.publishKafkaMessage(request);
 	}
 	
 }
