@@ -24,5 +24,8 @@ http://localhost:7078/swagger-ui.html
 
 5. Actuator tools 
 
+helps us extracting information about the spring boot app.
+
 http://localhost:7078/actuator/health
 http://localhost:7078/actuator/beans
+http://localhost:7078/actuator/env
