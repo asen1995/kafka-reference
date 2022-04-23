@@ -21,3 +21,8 @@ in this case 2.3.6.RELEASE is compatible with spring-kafka 2.7.1
 4. swagger-ui url 
 
 http://localhost:7078/swagger-ui.html
+
+5. Actuator tools 
+
+http://localhost:7078/actuator/health
+http://localhost:7078/actuator/beans
