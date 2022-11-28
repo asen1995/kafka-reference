@@ -4,7 +4,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class KafkaListeners {
+public class KafkaConsumer {
 	
 	@KafkaListener(topics = "AsenTopic", groupId = "initGroupId")
 	public void listenGroupInitGroupId(String message) {
