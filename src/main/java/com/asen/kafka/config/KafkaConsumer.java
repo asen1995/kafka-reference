@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 	
-	@KafkaListener(topics = "AsenTopic", groupId = "initGroupId")
-	public void listenGroupInitGroupId(String message) {
-		System.out.println("Received Message in group id initGroupId: " + message);
+	@KafkaListener(topics = "AsenTopic", groupId = "simpleStringMessageGroupId")
+	public void listenGroupSimpleStringMessageGroupId(String message) {
+		System.out.println("Received Message in group id simpleStringMessageGroupId: " + message);
 	}
 
 }

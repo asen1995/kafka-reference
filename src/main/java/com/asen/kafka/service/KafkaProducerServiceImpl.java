@@ -21,7 +21,9 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
 		String topic = publishKafkaMessageRequest.getTopic();
 		String message = publishKafkaMessageRequest.getMessage();
 
-		kafkaTemplate.send(topic, message);
+		for(int i = 0 ; i < 1_000_000 ; i++){
+			kafkaTemplate.send(topic, message + i);
+		}
 
 		PublishKafkaMessageResponse publishKafkaMessageResponse = new PublishKafkaMessageResponse();
 		publishKafkaMessageResponse.setTopic(topic);
