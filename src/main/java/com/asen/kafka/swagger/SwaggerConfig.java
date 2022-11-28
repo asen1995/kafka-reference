@@ -1,4 +1,4 @@
-package com.asen.kafka.config.swagger;
+package com.asen.kafka.swagger;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
