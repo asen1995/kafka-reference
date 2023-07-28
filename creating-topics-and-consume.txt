@@ -1,0 +1,19 @@
+create topic:
+
+docker exec -it {{containerId}} kafka-topics.sh --create --topic product-messages --partitions 1 --replication-factor 1 --bootstrap-server kafka:9092
+
+
+list existing topics:
+
+docker exec -it {{containerId}} kafka-topics.sh --list --bootstrap-server kafka:9092
+
+
+Producer: 
+
+
+docker exec -it {{containerId}} kafka-console-producer.sh --topic product-messages --bootstrap-server kafka:9092
+
+
+consumer: 
+
+docker exec -it {{containerId}} kafka-console-consumer.sh --topic product-messages --from-beginning --bootstrap-server kafka:9092
