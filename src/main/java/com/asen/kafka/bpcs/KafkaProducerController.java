@@ -40,5 +40,5 @@ public class KafkaProducerController {
 	public PublishKafkaMessageResponse publishKafkaMessage(@RequestBody PublishKafkaMessageRequest request) {		
 		return kafkaProducerService.publishKafkaMessage(request);
 	}
-	
+
 }

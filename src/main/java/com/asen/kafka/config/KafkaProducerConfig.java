@@ -33,4 +33,5 @@ public class KafkaProducerConfig {
                 StringSerializer.class);
         return new KafkaTemplate<>(new DefaultKafkaProducerFactory<>(configProps));
     }
+    
 }
